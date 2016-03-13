@@ -2,8 +2,8 @@ class Ball {
 
   float startX;
   float startY;
-  float speedOfXMovement = 4.0;
-  float speedOfYMovement = 0.5;
+  float speedOfXMovement = random(-2, 2);
+  float speedOfYMovement = random(-2, 2);
 
   float GRAVITY = 0.2;
 
