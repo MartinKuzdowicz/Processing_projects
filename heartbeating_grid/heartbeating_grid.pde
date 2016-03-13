@@ -8,17 +8,19 @@
 
 void setup(){
   
-  size(800,800);
-  frameRate(30);
+  size(1000,800);
+  frameRate(10);
+  smooth();
   
 }
 
 void draw() {
   
-  background(0);
-
-  for (int x = 1; x < 20; x++){
-    for(int y = 1; y < 20; y++) {
+  background(255);
+  stroke(0);
+  
+  for (int x = 1; x < 15; x++){
+    for(int y = 1; y < 15; y++) {
       
       if(y % 5 == 0){
         fill(200, 150, 0);
@@ -34,19 +36,19 @@ void draw() {
   
   drawCounter++;
   
-  if(drawCounter < 40) {
+  if(drawCounter < 30) {
     
      xCoordStart++;
     yCoordStart++;
     
-  } else if (drawCounter > 40) {
+  } else if (drawCounter > 30) {
     
      xCoordStart--;
      yCoordStart--;
     
   }
   
-  if(drawCounter == 80) {
+  if(drawCounter == 60) {
     
     drawCounter = 0;
     

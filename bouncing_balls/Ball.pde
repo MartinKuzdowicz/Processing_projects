@@ -1,46 +1,50 @@
 class Ball {
 
-  int startX;
-  int startY;
-  int speedOfXMovement = 2;
-  int speedOfYMovement = 6;
-  
-  public Ball(int x, int y) {
+  float startX;
+  float startY;
+  float speedOfXMovement = 4.0;
+  float speedOfYMovement = 0.5;
+
+  float GRAVITY = 0.2;
+
+  public Ball(float x, float y) {
     startX = x;
     startY = y;
   }
-  
-  
+
+
   void existAndBehave() {
-  display();
-  move();
-  bounce();
-  
+    display();
+    move();
+    bounce();
+    gravity();
   }
-  
-  void move(){
-     
+
+  void move() {
+
     startX += speedOfXMovement;
     startY += speedOfYMovement;
-    
   }
-  
+
   void bounce() {
-    
-    if(startX >= width || startX <= 0) {
-      speedOfXMovement *= -1;
+
+    if (startX >= width || startX <= 0) {
+      speedOfXMovement *= -1.0;
     }
-    
-    if(startY >= width || startY <= 0) {
-      speedOfYMovement *= -1;
+
+    if (startY >= width || startY <= 0) {
+      speedOfYMovement *= -1.0;
     }
-    
   }
-  
-  void display(){
-   
+
+  void display() {
+
     ellipse(startX, startY, 20, 20);
-    
   }
-  
+
+  void gravity() {
+
+
+    speedOfYMovement += GRAVITY;
+  }
 }
