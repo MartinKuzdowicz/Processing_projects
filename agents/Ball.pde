@@ -11,6 +11,8 @@ class Ball {
   int MIN_DISTANCE_TO_LINE_CONNECTION = 80;
   int MIN_DISTANCE_TO_COHESION = 80;
   int MIN_DISTANCE_TO_SEPARATE = 80;
+  
+  int agentWidthAndHeight = 10;
 
 
   Ball(Vec3D loc) {
@@ -48,7 +50,7 @@ class Ball {
   }
 
   void display() {
-    ellipse(loc.x, loc.y, 20, 20);
+    ellipse(loc.x, loc.y, agentWidthAndHeight, agentWidthAndHeight);
   }
 
   void flock() {
@@ -147,7 +149,7 @@ class Ball {
 
       if (distance > 0 && distance < MIN_DISTANCE_TO_LINE_CONNECTION) {
 
-        stroke(255, 0, 0);
+        stroke(0, 0, 230);
         line(this.loc.x, this.loc.y, currentBall.loc.x, currentBall.loc.y);
       }
     }

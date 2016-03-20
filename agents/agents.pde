@@ -8,7 +8,7 @@ void setup() {
   smooth();
 
 
-  for (int i = 0; i < 100; i++) {
+  for (int i = 0; i < 250; i++) {
     Ball newBall = new Ball(new Vec3D(random(0, width), random(0, 400), 0));
     listOfBalls.add(newBall);
   }
