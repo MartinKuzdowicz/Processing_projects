@@ -41,4 +41,13 @@ class BoxMover {
       acceleration.mult(0);
     }
   }
+
+  void behaveIfInVectorArea(PVector vec) {
+
+    if (location.x >= vec.x && location.x <= vec.mag()) {
+      
+      velocity.mult(0);
+      
+    }
+  }
 }
