@@ -4,6 +4,8 @@ class BoxMover {
   PVector velocity;
   PVector acceleration;
 
+  PVector friction;
+
   float size;
 
   BoxMover() {
@@ -45,9 +47,19 @@ class BoxMover {
   void behaveIfInVectorArea(PVector vec) {
 
     if (location.x >= vec.x && location.x <= vec.mag()) {
-      
-      velocity.mult(0);
-      
+
+      firctionBehavor();
     }
+  }
+
+
+  void firctionBehavor() {
+
+    friction = velocity.copy();
+    friction.normalize();
+    friction.mult(-1);
+    float c = 0.02;
+    friction.mult(c);
+    applayForce(friction);
   }
 }
